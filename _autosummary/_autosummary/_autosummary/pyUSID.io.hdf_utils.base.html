@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyUSID.io.hdf_utils.base &mdash; pyUSID 0.0.6.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="pyUSID.io.hdf_utils.simple" href="pyUSID.io.hdf_utils.simple.html" />
+    <link rel="prev" title="pyUSID.io.hdf_utils" href="../pyUSID.io.hdf_utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pyUSID
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.6.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">pyUSID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../external_guides.html">Tutorials on Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../auto_examples/index.html">Examples &amp; Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_format.html">Data Schema and File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribution_guidelines.html">Guidelines for Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../whats_new.html">What’s New</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../matlab_to_python.html">Upgrading from Matlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scale_to_hpc.html">Scaling to High-Performance-Computing Clusters</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#submodules">Submodules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../pyUSID.io.html">pyUSID.io</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../pyUSID.io.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../pyUSID.io.hdf_utils.html">pyUSID.io.hdf_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.dtype_utils.html">pyUSID.io.dtype_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.image.html">pyUSID.io.image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.io_utils.html">pyUSID.io.io_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.numpy_translator.html">pyUSID.io.numpy_translator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.usi_data.html">pyUSID.io.usi_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.translator.html">pyUSID.io.translator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.write_utils.html">pyUSID.io.write_utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyUSID.processing.html">pyUSID.processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyUSID.viz.html">pyUSID.viz</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyUSID</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../api.html">API Reference</a> &raquo;</li>
+        
+          <li><a href="../../pyUSID.io.html">pyUSID.io</a> &raquo;</li>
+        
+          <li><a href="../pyUSID.io.hdf_utils.html">pyUSID.io.hdf_utils</a> &raquo;</li>
+        
+      <li>pyUSID.io.hdf_utils.base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/_autosummary/_autosummary/_autosummary/pyUSID.io.hdf_utils.base.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyUSID.io.hdf_utils.base">
+<span id="pyusid-io-hdf-utils-base"></span><h1>pyUSID.io.hdf_utils.base<a class="headerlink" href="#module-pyUSID.io.hdf_utils.base" title="Permalink to this headline">¶</a></h1>
+<p>Simple yet handy HDF5 utilities, independent of the  USID model</p>
+<p>Created on Tue Nov  3 21:14:25 2015</p>
+<p>&#64;author: Suhas Somnath, Chris Smith</p>
+<p class="rubric">Functions</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.get_attr" title="pyUSID.io.hdf_utils.base.get_attr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attr</span></code></a>(h5_object, attr_name)</p></td>
+<td><p>Returns the attribute from the h5py object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.get_attributes" title="pyUSID.io.hdf_utils.base.get_attributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attributes</span></code></a>(h5_object[, attr_names])</p></td>
+<td><p>Returns attribute associated with some DataSet.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.get_auxiliary_datasets" title="pyUSID.io.hdf_utils.base.get_auxiliary_datasets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_auxiliary_datasets</span></code></a>(h5_object[, …])</p></td>
+<td><p>Returns auxiliary dataset objects associated with some DataSet through its attributes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.get_h5_obj_refs" title="pyUSID.io.hdf_utils.base.get_h5_obj_refs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_h5_obj_refs</span></code></a>(obj_names, h5_refs)</p></td>
+<td><p>Given a list of H5 references and a list of names, this method returns H5 objects corresponding to the names</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.is_editable_h5" title="pyUSID.io.hdf_utils.base.is_editable_h5"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_editable_h5</span></code></a>(h5_obj)</p></td>
+<td><p>Returns True if the file containing the provided h5 object is in w or r+ modes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.link_h5_obj_as_alias" title="pyUSID.io.hdf_utils.base.link_h5_obj_as_alias"><code class="xref py py-obj docutils literal notranslate"><span class="pre">link_h5_obj_as_alias</span></code></a>(h5_main, h5_ancillary, …)</p></td>
+<td><p>Creates Dataset attributes that contain references to other Dataset Objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.link_h5_objects_as_attrs" title="pyUSID.io.hdf_utils.base.link_h5_objects_as_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">link_h5_objects_as_attrs</span></code></a>(src, h5_objects)</p></td>
+<td><p>Creates Dataset attributes that contain references to other Dataset Objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.print_tree" title="pyUSID.io.hdf_utils.base.print_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_tree</span></code></a>(parent[, rel_paths, main_dsets_only])</p></td>
+<td><p>Simple function to recursively print the contents of an hdf5 group</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.write_book_keeping_attrs" title="pyUSID.io.hdf_utils.base.write_book_keeping_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_book_keeping_attrs</span></code></a>(h5_obj)</p></td>
+<td><p>Writes basic book-keeping and posterity related attributes to groups created in pyUSID such as machine id, pyUSID version, timestamp.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.base.write_simple_attrs" title="pyUSID.io.hdf_utils.base.write_simple_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_simple_attrs</span></code></a>(h5_obj, attrs[, …])</p></td>
+<td><p>Writes attributes to a h5py object</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.get_attr">
+<code class="sig-name descname">get_attr</code><span class="sig-paren">(</span><em class="sig-param">h5_object</em>, <em class="sig-param">attr_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#get_attr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.get_attr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the attribute from the h5py object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_object</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Dataset</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Group</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.File</span></code>) – object whose attribute is desired</p></li>
+<li><p><strong>attr_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Name of the attribute of interest</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>att_val</strong> – value of attribute, in certain cases (byte strings or list of byte strings) reformatted to readily usable forms</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)">object</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.get_attributes">
+<code class="sig-name descname">get_attributes</code><span class="sig-paren">(</span><em class="sig-param">h5_object</em>, <em class="sig-param">attr_names=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#get_attributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns attribute associated with some DataSet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_object</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Dataset</span></code>) – Dataset object reference.</p></li>
+<li><p><strong>attr_names</strong> (str or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> of str, optional. Default = all) – Name of attribute object to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>att_dict</strong> – Dictionary containing (name,value) pairs of attributes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.get_auxiliary_datasets">
+<code class="sig-name descname">get_auxiliary_datasets</code><span class="sig-paren">(</span><em class="sig-param">h5_object</em>, <em class="sig-param">aux_dset_name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#get_auxiliary_datasets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.get_auxiliary_datasets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns auxiliary dataset objects associated with some DataSet through its attributes.
+Note - region references will be ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_object</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Dataset</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Group</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.File</span></code>) – Dataset object reference.</p></li>
+<li><p><strong>aux_dset_name</strong> (str or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> of str, optional. Default = all) – Name of auxiliary <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Dataset</span></code> objects to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Reference</span></code> of auxiliary <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Dataset</span></code> objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.get_h5_obj_refs">
+<code class="sig-name descname">get_h5_obj_refs</code><span class="sig-paren">(</span><em class="sig-param">obj_names</em>, <em class="sig-param">h5_refs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#get_h5_obj_refs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.get_h5_obj_refs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of H5 references and a list of names,
+this method returns H5 objects corresponding to the names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_names</strong> (<em>string</em><em> or </em><em>List of strings</em>) – names of target h5py objects</p></li>
+<li><p><strong>h5_refs</strong> (<em>H5 object reference</em><em> or </em><em>List of H5 object references</em>) – list containing the target reference</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>found_objects</strong> – Corresponding references</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List of HDF5 dataset references</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.is_editable_h5">
+<code class="sig-name descname">is_editable_h5</code><span class="sig-paren">(</span><em class="sig-param">h5_obj</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#is_editable_h5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.is_editable_h5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the file containing the provided h5 object is in w or r+ modes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>h5_obj</strong> (<em>h5py.File</em><em>, </em><em>h5py.Group</em><em>, or </em><em>h5py.Dataset object</em>) – h5py object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mode</strong> – True if the file containing the provided h5 object is in w or r+ modes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.link_h5_obj_as_alias">
+<code class="sig-name descname">link_h5_obj_as_alias</code><span class="sig-paren">(</span><em class="sig-param">h5_main</em>, <em class="sig-param">h5_ancillary</em>, <em class="sig-param">alias_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#link_h5_obj_as_alias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.link_h5_obj_as_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates Dataset attributes that contain references to other Dataset Objects.
+This function is useful when the reference attribute must have a reserved name.
+Such as linking ‘SHO_Indices’ as ‘Spectroscopic_Indices’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_main</strong> (<em>h5py.Dataset</em>) – Reference to the the object to which attributes will be added</p></li>
+<li><p><strong>h5_ancillary</strong> (<em>h5py.Dataset</em>) – object whose reference that can be accessed from src.attrs</p></li>
+<li><p><strong>alias_name</strong> (<em>String</em>) – Alias / alternate name for trg</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.link_h5_objects_as_attrs">
+<code class="sig-name descname">link_h5_objects_as_attrs</code><span class="sig-paren">(</span><em class="sig-param">src</em>, <em class="sig-param">h5_objects</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#link_h5_objects_as_attrs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.link_h5_objects_as_attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates Dataset attributes that contain references to other Dataset Objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<em>Reference to h5.object</em>) – Reference to the the object to which attributes will be added</p></li>
+<li><p><strong>h5_objects</strong> (<em>list of references to h5.objects</em>) – objects whose references that can be accessed from src.attrs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.print_tree">
+<code class="sig-name descname">print_tree</code><span class="sig-paren">(</span><em class="sig-param">parent</em>, <em class="sig-param">rel_paths=False</em>, <em class="sig-param">main_dsets_only=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#print_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.print_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple function to recursively print the contents of an hdf5 group</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Group</span></code>) – HDF5 (sub-)tree to print</p></li>
+<li><p><strong>rel_paths</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional. Default = False</em>) – True - prints the relative paths for all elements.
+False - prints a tree-like structure with only the element names</p></li>
+<li><p><strong>main_dsets_only</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional. default=False</em>) – True - prints only groups and Main datasets
+False - prints all dataset and group objects</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.write_book_keeping_attrs">
+<code class="sig-name descname">write_book_keeping_attrs</code><span class="sig-paren">(</span><em class="sig-param">h5_obj</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#write_book_keeping_attrs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.write_book_keeping_attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes basic book-keeping and posterity related attributes to groups created in pyUSID such as machine id,
+pyUSID version, timestamp.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>h5_obj</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Dataset</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Group</span></code>, or <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.File</span></code>) – Object to which basic book-keeping attributes need to be written</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.base.write_simple_attrs">
+<code class="sig-name descname">write_simple_attrs</code><span class="sig-paren">(</span><em class="sig-param">h5_obj</em>, <em class="sig-param">attrs</em>, <em class="sig-param">obj_type=''</em>, <em class="sig-param">verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/base.html#write_simple_attrs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.base.write_simple_attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes attributes to a h5py object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_obj</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.File</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Group</span></code>, or h5py.Dataset object) – h5py object to which the attributes will be written to</p></li>
+<li><p><strong>attrs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – Dictionary containing the attributes as key-value pairs</p></li>
+<li><p><strong>obj_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><em>unicode</em><em>, </em><em>optional. Default = ''</em>) – type of h5py.obj. Examples include ‘group’, ‘file’, ‘dataset</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional. Default=False</em>) – Whether or not to print debugging statements</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyUSID.io.hdf_utils.simple.html" class="btn btn-neutral float-right" title="pyUSID.io.hdf_utils.simple" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pyUSID.io.hdf_utils.html" class="btn btn-neutral float-left" title="pyUSID.io.hdf_utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Suhas Somnath, Chris R. Smith, Stephen Jesse
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

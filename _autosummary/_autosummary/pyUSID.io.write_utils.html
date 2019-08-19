@@ -1,0 +1,536 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyUSID.io.write_utils &mdash; pyUSID 0.0.6.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="pyUSID.processing" href="../pyUSID.processing.html" />
+    <link rel="prev" title="pyUSID.io.translator" href="pyUSID.io.translator.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pyUSID
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.6.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">pyUSID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../external_guides.html">Tutorials on Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Examples &amp; Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_format.html">Data Schema and File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribution_guidelines.html">Guidelines for Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../whats_new.html">What’s New</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matlab_to_python.html">Upgrading from Matlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scale_to_hpc.html">Scaling to High-Performance-Computing Clusters</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#submodules">Submodules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyUSID.io.html">pyUSID.io</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../pyUSID.io.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyUSID.io.hdf_utils.html">pyUSID.io.hdf_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyUSID.io.dtype_utils.html">pyUSID.io.dtype_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyUSID.io.image.html">pyUSID.io.image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyUSID.io.io_utils.html">pyUSID.io.io_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyUSID.io.numpy_translator.html">pyUSID.io.numpy_translator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyUSID.io.usi_data.html">pyUSID.io.usi_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyUSID.io.translator.html">pyUSID.io.translator</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">pyUSID.io.write_utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyUSID.processing.html">pyUSID.processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyUSID.viz.html">pyUSID.viz</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyUSID</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../api.html">API Reference</a> &raquo;</li>
+        
+          <li><a href="../pyUSID.io.html">pyUSID.io</a> &raquo;</li>
+        
+      <li>pyUSID.io.write_utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/_autosummary/_autosummary/pyUSID.io.write_utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyUSID.io.write_utils">
+<span id="pyusid-io-write-utils"></span><h1>pyUSID.io.write_utils<a class="headerlink" href="#module-pyUSID.io.write_utils" title="Permalink to this headline">¶</a></h1>
+<p>Utilities that assist in writing USID related data to HDF5 files</p>
+<p>Created on Thu Sep  7 21:14:25 2017</p>
+<p>&#64;author: Suhas Somnath, Chris Smith</p>
+<p class="rubric">Functions</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.build_ind_val_matrices" title="pyUSID.io.write_utils.build_ind_val_matrices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_ind_val_matrices</span></code></a>(unit_values[, …])</p></td>
+<td><p>Builds indices and values matrices using given unit values for each dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.calc_chunks" title="pyUSID.io.write_utils.calc_chunks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_chunks</span></code></a>(dimensions, dtype_byte_size[, …])</p></td>
+<td><p>Calculate the chunk size for the HDF5 dataset based on the dimensions and the maximum chunk size in memory</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.clean_string_att" title="pyUSID.io.write_utils.clean_string_att"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_string_att</span></code></a>(att_val)</p></td>
+<td><p>Replaces any unicode objects within lists with their string counterparts to ensure compatibility with python 3.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.create_spec_inds_from_vals" title="pyUSID.io.write_utils.create_spec_inds_from_vals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_spec_inds_from_vals</span></code></a>(ds_spec_val_mat)</p></td>
+<td><p>Create new Spectroscopic Indices table from the changes in the Spectroscopic Values</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.get_aux_dset_slicing" title="pyUSID.io.write_utils.get_aux_dset_slicing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_aux_dset_slicing</span></code></a>(dim_names[, last_ind, …])</p></td>
+<td><p>Returns a dictionary of slice objects to help in creating region references in the position or spectroscopic indices and values datasets</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.get_slope" title="pyUSID.io.write_utils.get_slope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_slope</span></code></a>(values[, tol])</p></td>
+<td><p>Attempts to get the slope of the provided values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.make_indices_matrix" title="pyUSID.io.write_utils.make_indices_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_indices_matrix</span></code></a>(num_steps[, is_position])</p></td>
+<td><p>Makes an ancillary indices matrix given the number of steps in each dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.to_ranges" title="pyUSID.io.write_utils.to_ranges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ranges</span></code></a>(iterable)</p></td>
+<td><p>Converts a sequence of iterables to range tuples</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.validate_dimensions" title="pyUSID.io.write_utils.validate_dimensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_dimensions</span></code></a>(dimensions[, dim_type])</p></td>
+<td><p>Checks if the provided object is an iterable with pyUSID.Dimension objects.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.DimType" title="pyUSID.io.write_utils.DimType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DimType</span></code></a></p></td>
+<td><p>An enumeration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.write_utils.Dimension" title="pyUSID.io.write_utils.Dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dimension</span></code></a>(name, units, values[, mode])</p></td>
+<td><p>Simple object that describes a dimension in a dataset by its name, units, and values</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pyUSID.io.write_utils.clean_string_att">
+<code class="sig-name descname">clean_string_att</code><span class="sig-paren">(</span><em class="sig-param">att_val</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#clean_string_att"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.clean_string_att" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces any unicode objects within lists with their string counterparts to ensure compatibility with python 3.
+If the attribute is indeed a list of unicodes, the changes will be made in-place</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>att_val</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><em>object</em></a>) – Attribute object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>att_val</strong> – Attribute object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)">object</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.write_utils.get_aux_dset_slicing">
+<code class="sig-name descname">get_aux_dset_slicing</code><span class="sig-paren">(</span><em class="sig-param">dim_names</em>, <em class="sig-param">last_ind=None</em>, <em class="sig-param">is_spectroscopic=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#get_aux_dset_slicing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.get_aux_dset_slicing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of slice objects to help in creating region references in the position or spectroscopic
+indices and values datasets</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim_names</strong> (<em>iterable</em>) – List of strings denoting the names of the position axes or spectroscopic dimensions arranged in the same order
+that matches the dimensions in the indices / values dataset</p></li>
+<li><p><strong>last_ind</strong> (<em>(</em><em>Optional</em><em>) </em><em>unsigned int</em><em>, </em><em>default = None</em>) – Last pixel in the positon or spectroscopic matrix. Useful in experiments where the
+parameters have changed (eg. BEPS new data format) during the experiment.</p></li>
+<li><p><strong>is_spectroscopic</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional. default = True</em>) – set to True for position datasets and False for spectroscopic datasets</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>slice_dict</strong> – Dictionary of tuples containing slice objects corresponding to
+each position axis.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.write_utils.make_indices_matrix">
+<code class="sig-name descname">make_indices_matrix</code><span class="sig-paren">(</span><em class="sig-param">num_steps</em>, <em class="sig-param">is_position=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#make_indices_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.make_indices_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes an ancillary indices matrix given the number of steps in each dimension. In other words, this function builds
+a matrix whose rows correspond to unique combinations of the multiple dimensions provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_steps</strong> (<em>List / numpy array</em>) – Number of steps in each spatial or spectral dimension
+Note that the axes must be ordered from fastest varying to slowest varying</p></li>
+<li><p><strong>is_position</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em><em>, </em><em>default = True</em>) – Whether the returned matrix is meant for position (True) indices (tall and skinny) or spectroscopic (False)
+indices (short and wide)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>indices_matrix</strong> – arranged as [steps, spatial dimension]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2D unsigned int numpy array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyUSID.io.write_utils.INDICES_DTYPE">
+<code class="sig-name descname">INDICES_DTYPE</code><a class="headerlink" href="#pyUSID.io.write_utils.INDICES_DTYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.uint32</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyUSID.io.write_utils.VALUES_DTYPE">
+<code class="sig-name descname">VALUES_DTYPE</code><a class="headerlink" href="#pyUSID.io.write_utils.VALUES_DTYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.float32</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.write_utils.get_slope">
+<code class="sig-name descname">get_slope</code><span class="sig-paren">(</span><em class="sig-param">values</em>, <em class="sig-param">tol=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#get_slope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.get_slope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempts to get the slope of the provided values. This function will be handy
+for checking if a dimension has been varied linearly or not.
+If the values vary non-linearly, a ValueError will be raised</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>array-like</em>) – List of numbers</p></li>
+<li><p><strong>tol</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional. Default = 1E-3</em>) – Tolerance in the variation of the slopes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Slope of the line</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyUSID.io.write_utils.Dimension">
+<em class="property">class </em><code class="sig-name descname">Dimension</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">units</em>, <em class="sig-param">values</em>, <em class="sig-param">mode=&lt;DimType.DEFAULT: 0&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#Dimension"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.Dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple object that describes a dimension in a dataset by its name, units, and values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><em>unicode</em>) – Name of the dimension. For example ‘Bias’</p></li>
+<li><p><strong>units</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><em>unicode</em>) – Units for this dimension. For example: ‘V’</p></li>
+<li><p><strong>values</strong> (<em>array-like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Values over which this dimension was varied. A linearly increasing set of values will be generated if an
+integer is provided instead of an array.</p></li>
+<li><p><strong>mode</strong> (<em>Enum</em><em>, </em><em>Optional. Default = DimType.DEFAULT</em>) – <p>How the parameter associated with the dimension was varied.
+DimType.DEFAULT - data was recorded for all combinations of values in this dimension against <strong>all</strong> other
+dimensions. This is typically the case.
+DimType.INCOMPLETE - Data not present for all combinations of values in this dimension and all other</p>
+<blockquote>
+<div><p>dimensions. Examples include spiral scans, sparse sampling, aborted measurements</p>
+</div></blockquote>
+<p>DimType.DEPENDENT - Values in this dimension were varied as a function of another (independent) dimension.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.write_utils.build_ind_val_matrices">
+<code class="sig-name descname">build_ind_val_matrices</code><span class="sig-paren">(</span><em class="sig-param">unit_values</em>, <em class="sig-param">is_spectral=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#build_ind_val_matrices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.build_ind_val_matrices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds indices and values matrices using given unit values for each dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_values</strong> (<em>list / tuple</em>) – Sequence of values vectors for each dimension</p></li>
+<li><p><strong>is_spectral</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em> (</em><em>optional</em><em>)</em><em>, </em><em>default = True</em>) – If true, returns matrices for spectroscopic datasets, else returns matrices for Position datasets</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>ind_mat</strong> (<em>2D numpy array</em>) – Indices matrix</p></li>
+<li><p><strong>val_mat</strong> (<em>2D numpy array</em>) – Values matrix</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.write_utils.calc_chunks">
+<code class="sig-name descname">calc_chunks</code><span class="sig-paren">(</span><em class="sig-param">dimensions</em>, <em class="sig-param">dtype_byte_size</em>, <em class="sig-param">unit_chunks=None</em>, <em class="sig-param">max_chunk_mem=10240</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#calc_chunks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.calc_chunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the chunk size for the HDF5 dataset based on the dimensions and the
+maximum chunk size in memory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dimensions</strong> (<em>array_like of int</em>) – Shape of the data to be chunked</p></li>
+<li><p><strong>dtype_byte_size</strong> (<em>unsigned int</em>) – Size of an entry in the data in bytes</p></li>
+<li><p><strong>unit_chunks</strong> (<em>array_like of int</em><em>, </em><em>optional</em>) – Unit size of the chunking in each dimension.  Must be the same size as
+the shape of <cite>ds_main</cite>.  Default None, <cite>unit_chunks</cite> is set to 1 in all
+dimensions</p></li>
+<li><p><strong>max_chunk_mem</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum size of the chunk in memory in bytes.  Default 10240b or 10kb per h5py recommendations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>chunking</strong> – Calculated maximum size of a chunk in each dimension that is as close to the
+requested <cite>max_chunk_mem</cite> as posible while having steps based on the input
+<cite>unit_chunks</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple of int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.write_utils.create_spec_inds_from_vals">
+<code class="sig-name descname">create_spec_inds_from_vals</code><span class="sig-paren">(</span><em class="sig-param">ds_spec_val_mat</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#create_spec_inds_from_vals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.create_spec_inds_from_vals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new Spectroscopic Indices table from the changes in the
+Spectroscopic Values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ds_spec_val_mat</strong> (<em>array-like</em><em>,</em>) – Holds the spectroscopic values to be indexed</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>ds_spec_inds_mat</strong> – Indices corresponding to the values in ds_spec_val_mat</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy array of uints the same shape as ds_spec_val_mat</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.write_utils.validate_dimensions">
+<code class="sig-name descname">validate_dimensions</code><span class="sig-paren">(</span><em class="sig-param">dimensions</em>, <em class="sig-param">dim_type='Position'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#validate_dimensions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.validate_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the provided object is an iterable with pyUSID.Dimension objects.
+If it is not full of Dimension objects, Exceptions are raised.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dimensions</strong> (<em>iterable</em><em> or </em><em>pyUSID.Dimension</em>) – Iterable containing pyUSID.Dimension objects</p></li>
+<li><p><strong>dim_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><em>Optional. Default = &quot;Position&quot;</em>) – Type of Dimensions in the iterable. Set to “Spectroscopic” if not Position dimensions.
+This string is only used for more descriptive Exceptions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List containing pyUSID.Dimension objects</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyUSID.io.write_utils.DimType">
+<em class="property">class </em><code class="sig-name descname">DimType</code><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#DimType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.DimType" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.write_utils.to_ranges">
+<code class="sig-name descname">to_ranges</code><span class="sig-paren">(</span><em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyUSID/io/write_utils.html#to_ranges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.write_utils.to_ranges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a sequence of iterables to range tuples</p>
+<p>From <a class="reference external" href="https://stackoverflow.com/questions/4628333/converting-a-list-of-integers-into-range-in-python">https://stackoverflow.com/questions/4628333/converting-a-list-of-integers-into-range-in-python</a></p>
+<p>Credits: &#64;juanchopanza and &#64;luca</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iterable</strong> (<em>collections.Iterable object</em>) – iterable object like a list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>iterable</strong> – Cast to list or similar to use</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>generator object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pyUSID.processing.html" class="btn btn-neutral float-right" title="pyUSID.processing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyUSID.io.translator.html" class="btn btn-neutral float-left" title="pyUSID.io.translator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Suhas Somnath, Chris R. Smith, Stephen Jesse
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

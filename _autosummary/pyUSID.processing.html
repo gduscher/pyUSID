@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyUSID.processing &mdash; pyUSID 0.0.6.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pyUSID.viz" href="pyUSID.viz.html" />
+    <link rel="prev" title="pyUSID.io.write_utils" href="_autosummary/pyUSID.io.write_utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pyUSID
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.6.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">pyUSID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_guides.html">Tutorials on Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples &amp; Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_format.html">Data Schema and File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution_guidelines.html">Guidelines for Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What’s New</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_to_python.html">Upgrading from Matlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scale_to_hpc.html">Scaling to High-Performance-Computing Clusters</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyUSID.io.html">pyUSID.io</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyUSID.processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyUSID.viz.html">pyUSID.viz</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyUSID</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+        
+      <li>pyUSID.processing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_autosummary/pyUSID.processing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyUSID.processing">
+<span id="pyusid-processing"></span><h1>pyUSID.processing<a class="headerlink" href="#module-pyUSID.processing" title="Permalink to this headline">¶</a></h1>
+<p>Formalizing data processing on USID datasets using parallel computing tools</p>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+</tbody>
+</table>
+<dl class="class">
+<dt id="pyUSID.processing.Process">
+<em class="property">class </em><code class="sig-name descname">Process</code><span class="sig-paren">(</span><em class="sig-param">h5_main</em>, <em class="sig-param">cores=None</em>, <em class="sig-param">max_mem_mb=4096</em>, <em class="sig-param">mem_multiplier=1.0</em>, <em class="sig-param">verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyUSID/processing/process.html#Process"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.processing.Process" title="Permalink to this definition">¶</a></dt>
+<dd><p>An abstract class for formulating scientific problems as computational problems. This class handles the tedious,
+science-agnostic, file-operations, parallel-computations, and book-keeping operations such that children classes
+only need to specify application-relevant code for processing the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_main</strong> (<a class="reference internal" href="_autosummary/pyUSID.io.usi_data.html#pyUSID.io.usi_data.USIDataset" title="pyUSID.io.usi_data.USIDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">USIDataset</span></code></a>) – The USID main HDF5 dataset over which the analysis will be performed.</p></li>
+<li><p><strong>cores</strong> (<em>uint</em><em>, </em><em>optional</em>) – How many cores to use for the computation. Default: all available cores - 2 if operating outside MPI context</p></li>
+<li><p><strong>max_mem_mb</strong> (<em>uint</em><em>, </em><em>optional</em>) – How much memory to use for the computation.  Default 1024 Mb</p></li>
+<li><p><strong>mem_multiplier</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional. Default = 1</em>) – mem_multiplier is the number that will be multiplied with the
+(byte) size of a single position in the source dataset in order to
+better estimate the number of positions that can be processed at
+any given time (how many pixels of the source and results datasets
+can be retained in memory). The default value of 1.0 only accounts
+for the source dataset. A value greater than 1 would account for
+the size of results datasets as well. For example, if the result
+dataset is the same size and precision as the source dataset,
+the multiplier will be 2 (1 for source, 1 for result)</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>Optional</em><em>, </em><em>default = False</em>) – Whether or not to print debugging statements</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pyUSID.processing.Process.compute">
+<code class="sig-name descname">compute</code><span class="sig-paren">(</span><em class="sig-param">override=False</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyUSID/processing/process.html#Process.compute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.processing.Process.compute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates placeholders for the results, applies the <code class="xref py py-meth docutils literal notranslate"><span class="pre">_unit_computation()</span></code>
+to chunks of the dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>override</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional. default = False</em>) – By default, compute will simply return duplicate results to avoid recomputing or resume computation on a
+group with partial results. Set to True to force fresh computation.</p></li>
+<li><p><strong>args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – arguments to the mapped function in the correct order</p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – keyword arguments to the mapped function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>h5_results_grp</strong> – Group containing all the results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Group</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyUSID.processing.Process.parms_dict">
+<code class="sig-name descname">parms_dict</code><em class="property"> = None</em><a class="headerlink" href="#pyUSID.processing.Process.parms_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the HDF5 dataset that should be present to signify which positions have already been computed
+This is NOT a fully private variable so that multiple processes can be run within a single group - Eg Fitter
+In the case of Fitter - this name can be changed from ‘completed_guesses’ to ‘completed_fits’
+check_for_duplicates will be called by the Child class where they have the opportunity to change this
+variable before checking for duplicates</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyUSID.processing.Process.test">
+<code class="sig-name descname">test</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyUSID/processing/process.html#Process.test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.processing.Process.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests the process on a subset (for example a pixel) of the whole data. The class can be re-instantiated with
+improved parameters and tested repeatedly until the user is content, at which point the user can call
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">compute()</span></code> on the whole dataset.</p>
+<p class="rubric">Notes</p>
+<p>This is not a function that is expected to be called in MPI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>- dict</strong><strong>, </strong><strong>optional</strong> (<em>kwargs</em>) – keyword arguments to test the process</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyUSID.processing.Process.use_partial_computation">
+<code class="sig-name descname">use_partial_computation</code><span class="sig-paren">(</span><em class="sig-param">h5_partial_group=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyUSID/processing/process.html#Process.use_partial_computation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.processing.Process.use_partial_computation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the necessary parameters from the provided h5 group to resume computation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>h5_partial_group</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Group</span></code>) – Group containing partially computed results</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.processing.parallel_compute">
+<code class="sig-name descname">parallel_compute</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">func</em>, <em class="sig-param">cores=None</em>, <em class="sig-param">lengthy_computation=False</em>, <em class="sig-param">func_args=None</em>, <em class="sig-param">func_kwargs=None</em>, <em class="sig-param">verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyUSID/processing/comp_utils.html#parallel_compute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.processing.parallel_compute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the provided function using multiple cores using the joblib library</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><em>numpy.ndarray</em></a>) – Data to map function to. Function will be mapped to the first axis of data</p></li>
+<li><p><strong>func</strong> (<em>callable</em>) – Function to map to data</p></li>
+<li><p><strong>cores</strong> (<em>uint</em><em>, </em><em>optional</em>) – Number of logical cores to use to compute
+Default - All cores - 1 (total cores &lt;= 4) or - 2 (cores &gt; 4) depending on number of cores.
+Ignored in the MPI context - each rank will execute serially</p></li>
+<li><p><strong>lengthy_computation</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether or not each computation is expected to take substantial time.
+Sometimes the time for adding more cores can outweigh the time per core
+Default - False</p></li>
+<li><p><strong>func_args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>, </em><em>optional</em>) – arguments to be passed to the function</p></li>
+<li><p><strong>func_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a><em>, </em><em>optional</em>) – keyword arguments to be passed onto function</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional. default = False</em>) – Whether or not to print statements that aid in debugging</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>results</strong> – List of computational results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyUSID.viz.html" class="btn btn-neutral float-right" title="pyUSID.viz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="_autosummary/pyUSID.io.write_utils.html" class="btn btn-neutral float-left" title="pyUSID.io.write_utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Suhas Somnath, Chris R. Smith, Stephen Jesse
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

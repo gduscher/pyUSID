@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11. Input / Output utilities &mdash; pyUSID 0.0.6.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12. Computing utilities" href="plot_comp_utils.html" />
+    <link rel="prev" title="10. Formalizing Data Processing" href="plot_process.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pyUSID
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.6.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">pyUSID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../external_guides.html">Tutorials on Basics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Examples &amp; Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beginner-topics">Beginner topics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#intermediate-topics">Intermediate topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plot_dtype_utils.html">06. Utilities for handling data types and transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_parallel_compute.html">07. Speed up computations with parallel_compute()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_write_utils.html">08. Utilities that assist in writing USID data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_hdf_utils_write.html">09. Utilities for writing h5USID files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_process.html">10. Formalizing Data Processing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">11. Input / Output utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#string-formatting-utilities">String formatting utilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#communication-utilities">Communication utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="plot_comp_utils.html">12. Computing utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_format.html">Data Schema and File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribution_guidelines.html">Guidelines for Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../whats_new.html">What’s New</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matlab_to_python.html">Upgrading from Matlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scale_to_hpc.html">Scaling to High-Performance-Computing Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyUSID</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Examples &amp; Tutorials</a> &raquo;</li>
+        
+      <li>11. Input / Output utilities</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/auto_examples/intermediate/plot_io_utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-intermediate-plot-io-utils-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="input-output-utilities">
+<span id="sphx-glr-auto-examples-intermediate-plot-io-utils-py"></span><h1>11. Input / Output utilities<a class="headerlink" href="#input-output-utilities" title="Permalink to this headline">¶</a></h1>
+<p><strong>Suhas Somnath</strong></p>
+<p>8/12/2017</p>
+<p><strong>This is a short walk-through of useful utilities in pyUSID.io.io_utils that simplify common i/o tasks.</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can download and run this document as a Jupyter notebook using the link at the bottom of this page.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">package</span><span class="p">):</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;pip&quot;</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="n">package</span><span class="p">])</span>
+<span class="c1"># Package for downloading online files:</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">pyUSID</span> <span class="k">as</span> <span class="nn">usid</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pyUSID not found.  Will install with pip.&#39;</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">pip</span>
+    <span class="n">install</span><span class="p">(</span><span class="s1">&#39;pyUSID&#39;</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">pyUSID</span> <span class="k">as</span> <span class="nn">usid</span>
+</pre></div>
+</div>
+<div class="section" id="string-formatting-utilities">
+<h2>String formatting utilities<a class="headerlink" href="#string-formatting-utilities" title="Permalink to this headline">¶</a></h2>
+<p>Frequently, there is a need to print out logs on the console to inform the user about the size of files, or estimated
+time remaining for a computation to complete, etc. pyUSID.io_utils has a few handy functions that help in
+formatting quantities in a human readable format.</p>
+<div class="section" id="format-size">
+<h3>format_size()<a class="headerlink" href="#format-size" title="Permalink to this headline">¶</a></h3>
+<p>One function that uses this functionality to print the size of files etc. is format_size(). While one can manually
+print the available memory in gibibytes (see above), <code class="docutils literal notranslate"><span class="pre">format_size()</span></code> simplifies this substantially:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mem_in_bytes</span> <span class="o">=</span> <span class="n">usid</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">comp_utils</span><span class="o">.</span><span class="n">get_available_memory</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Available memory in this machine: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">usid</span><span class="o">.</span><span class="n">io_utils</span><span class="o">.</span><span class="n">format_size</span><span class="p">(</span><span class="n">mem_in_bytes</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Available memory in this machine: 6.47 GB
+</pre></div>
+</div>
+</div>
+<div class="section" id="format-time">
+<h3>format_time()<a class="headerlink" href="#format-time" title="Permalink to this headline">¶</a></h3>
+<p>On the same lines, <code class="docutils literal notranslate"><span class="pre">format_time()</span></code> is another handy function that is great at formatting time and is often used in
+Process and Fitter to print the remaining time</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> seconds = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">14497.34</span><span class="p">,</span> <span class="n">usid</span><span class="o">.</span><span class="n">io_utils</span><span class="o">.</span><span class="n">format_time</span><span class="p">(</span><span class="mf">14497.34</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>14497.34 seconds = 4.03 hours
+</pre></div>
+</div>
+</div>
+<div class="section" id="format-quantity">
+<h3>format_quantity()<a class="headerlink" href="#format-quantity" title="Permalink to this headline">¶</a></h3>
+<p>You can generate your own formatting function based using the generic function: <code class="docutils literal notranslate"><span class="pre">format_quantity()</span></code>.
+For example, if <code class="docutils literal notranslate"><span class="pre">format_time()</span></code> were not available, we could get the same functionality via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">units</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;msec&#39;</span><span class="p">,</span> <span class="s1">&#39;sec&#39;</span><span class="p">,</span> <span class="s1">&#39;mins&#39;</span><span class="p">,</span> <span class="s1">&#39;hours&#39;</span><span class="p">]</span>
+<span class="n">factors</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">3600</span><span class="p">]</span>
+<span class="n">time_value</span> <span class="o">=</span> <span class="mf">14497.34</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> seconds = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">14497.34</span><span class="p">,</span> <span class="n">usid</span><span class="o">.</span><span class="n">io_utils</span><span class="o">.</span><span class="n">format_quantity</span><span class="p">(</span><span class="n">time_value</span><span class="p">,</span> <span class="n">units</span><span class="p">,</span> <span class="n">factors</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>14497.34 seconds = 4.03 hours
+</pre></div>
+</div>
+</div>
+<div class="section" id="formatted-str-to-number">
+<h3>formatted_str_to_number()<a class="headerlink" href="#formatted-str-to-number" title="Permalink to this headline">¶</a></h3>
+<p>pyUSID also has a handy function for the inverse problem of getting a numeric value from a formatted string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unit_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;MHz&quot;</span><span class="p">,</span> <span class="s2">&quot;kHz&quot;</span><span class="p">]</span>
+<span class="n">unit_magnitudes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1E+6</span><span class="p">,</span> <span class="mf">1E+3</span><span class="p">]</span>
+<span class="n">str_value</span> <span class="o">=</span> <span class="s2">&quot;4.32 MHz&quot;</span>
+<span class="n">num_value</span> <span class="o">=</span> <span class="n">usid</span><span class="o">.</span><span class="n">io_utils</span><span class="o">.</span><span class="n">formatted_str_to_number</span><span class="p">(</span><span class="n">str_value</span><span class="p">,</span> <span class="n">unit_names</span><span class="p">,</span> <span class="n">unit_magnitudes</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;formatted_str_to_number says: </span><span class="si">{}</span><span class="s1"> = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">str_value</span><span class="p">,</span> <span class="n">num_value</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>formatted_str_to_number says: 4.32 MHz = 4320000.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-time-stamp">
+<h3>get_time_stamp()<a class="headerlink" href="#get-time-stamp" title="Permalink to this headline">¶</a></h3>
+<p>We try to use a standardized format for storing time stamps in HDF5 files. The function below generates the time
+as a string that can be easily parsed if need be</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Current time is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">usid</span><span class="o">.</span><span class="n">io_utils</span><span class="o">.</span><span class="n">get_time_stamp</span><span class="p">()))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Current time is: 2019_08_19-22_03_58
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="communication-utilities">
+<h2>Communication utilities<a class="headerlink" href="#communication-utilities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="file-dialog">
+<h3>file_dialog()<a class="headerlink" href="#file-dialog" title="Permalink to this headline">¶</a></h3>
+<p>This handy function generates a file window to select files. We encourage you to try this function out since it cannot
+demonstrated within this static document.</p>
+</div>
+<div class="section" id="check-ssh">
+<h3>check_ssh()<a class="headerlink" href="#check-ssh" title="Permalink to this headline">¶</a></h3>
+<p>When developing workflows that need to work on remote or virtual machines in addition to one’s own personal computer
+such as a laptop, this function is handy at letting the developer know where the code is being executed</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Running on remote machine: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">usid</span><span class="o">.</span><span class="n">io_utils</span><span class="o">.</span><span class="n">check_ssh</span><span class="p">()))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Running on remote machine: True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.140 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-intermediate-plot-io-utils-py">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/6be761b02e1f73374c2904f27f532e6e/plot_io_utils.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_io_utils.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/f9d294f284b381c3731fa3d4b8105620/plot_io_utils.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_io_utils.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plot_comp_utils.html" class="btn btn-neutral float-right" title="12. Computing utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="plot_process.html" class="btn btn-neutral float-left" title="10. Formalizing Data Processing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Suhas Somnath, Chris R. Smith, Stephen Jesse
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

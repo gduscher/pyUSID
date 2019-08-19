@@ -1,0 +1,14 @@
+
+:orphan:
+
+.. _sphx_glr_auto_examples_beginner_sg_execution_times:
+
+Computation times
+=================
+**00:17.005** total execution time for **auto_examples_beginner** files:
+
+- **00:08.732**: :ref:`sphx_glr_auto_examples_beginner_plot_plot_utils.py` (``plot_plot_utils.py``)
+- **00:05.981**: :ref:`sphx_glr_auto_examples_beginner_plot_numpy_translator.py` (``plot_numpy_translator.py``)
+- **00:01.327**: :ref:`sphx_glr_auto_examples_beginner_plot_usi_dataset.py` (``plot_usi_dataset.py``)
+- **00:00.876**: :ref:`sphx_glr_auto_examples_beginner_plot_hdf_utils_read.py` (``plot_hdf_utils_read.py``)
+- **00:00.088**: :ref:`sphx_glr_auto_examples_beginner_plot_h5py.py` (``plot_h5py.py``)

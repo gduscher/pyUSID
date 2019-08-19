@@ -1,0 +1,308 @@
+:orphan:
+
+
+
+.. _sphx_glr_auto_examples:
+
+====================
+Examples & Tutorials
+====================
+* The documents below should be sufficient for you to learn how to use and even write code for pyUSID.
+* If you haven't already, please go through the `tutorials on the basics <./external_guides>`_ of python, numerical analysis, tools like jupyter notebooks, etc.
+* All the documents listed below will assume familiarity with the **Universal Spectroscopy and Imaging Data (USID)** model. Please read `that document <./data_format.html>`_ **before** beginning
+* Please `get in touch <../contact.html>`_ with us if there are topics that you think need to be clarified / expanded / deserve new tutorials, or if you find any errors.
+* Please refer to our sister package - pycroscopy for examples on scientific data analysis and papers generated using pyUSID and pycroscopy.
+
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+
+
+.. _sphx_glr_auto_examples_beginner:
+
+Beginner topics
+---------------
+To learn **how to use pyUSID**, Please go through the following documents in the recommended order:
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/beginner/images/thumb/sphx_glr_plot_h5py_thumb.png
+
+        :ref:`sphx_glr_auto_examples_beginner_plot_h5py.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/beginner/plot_h5py
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/beginner/images/thumb/sphx_glr_plot_usi_dataset_thumb.png
+
+        :ref:`sphx_glr_auto_examples_beginner_plot_usi_dataset.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/beginner/plot_usi_dataset
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/beginner/images/thumb/sphx_glr_plot_numpy_translator_thumb.png
+
+        :ref:`sphx_glr_auto_examples_beginner_plot_numpy_translator.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/beginner/plot_numpy_translator
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/beginner/images/thumb/sphx_glr_plot_plot_utils_thumb.png
+
+        :ref:`sphx_glr_auto_examples_beginner_plot_plot_utils.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/beginner/plot_plot_utils
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/beginner/images/thumb/sphx_glr_plot_hdf_utils_read_thumb.png
+
+        :ref:`sphx_glr_auto_examples_beginner_plot_hdf_utils_read.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/beginner/plot_hdf_utils_read
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+
+
+.. _sphx_glr_auto_examples_intermediate:
+
+Intermediate topics
+-------------------
+To learn **how to write to h5USID files, write data processing classes, or adding functionality to pyUSID**, go through these additional documents in the recommended order:
+Those interested in contributing to pyUSID are encouraged to read our `guidelines for contributing code <../contribution_guidelines.html>`_
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/intermediate/images/thumb/sphx_glr_plot_dtype_utils_thumb.png
+
+        :ref:`sphx_glr_auto_examples_intermediate_plot_dtype_utils.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/intermediate/plot_dtype_utils
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath, Chris R. Smith**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/intermediate/images/thumb/sphx_glr_plot_parallel_compute_thumb.png
+
+        :ref:`sphx_glr_auto_examples_intermediate_plot_parallel_compute.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/intermediate/plot_parallel_compute
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/intermediate/images/thumb/sphx_glr_plot_write_utils_thumb.png
+
+        :ref:`sphx_glr_auto_examples_intermediate_plot_write_utils.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/intermediate/plot_write_utils
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/intermediate/images/thumb/sphx_glr_plot_hdf_utils_write_thumb.png
+
+        :ref:`sphx_glr_auto_examples_intermediate_plot_hdf_utils_write.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/intermediate/plot_hdf_utils_write
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/intermediate/images/thumb/sphx_glr_plot_process_thumb.png
+
+        :ref:`sphx_glr_auto_examples_intermediate_plot_process.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/intermediate/plot_process
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/intermediate/images/thumb/sphx_glr_plot_io_utils_thumb.png
+
+        :ref:`sphx_glr_auto_examples_intermediate_plot_io_utils.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/intermediate/plot_io_utils
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="**Suhas Somnath**">
+
+.. only:: html
+
+    .. figure:: /auto_examples/intermediate/images/thumb/sphx_glr_plot_comp_utils_thumb.png
+
+        :ref:`sphx_glr_auto_examples_intermediate_plot_comp_utils.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/intermediate/plot_comp_utils
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-gallery
+
+
+  .. container:: sphx-glr-download
+
+    :download:`Download all examples in Python source code: auto_examples_python.zip <//home/travis/build/pycroscopy/pyUSID/docs/auto_examples/auto_examples_python.zip>`
+
+
+
+  .. container:: sphx-glr-download
+
+    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip <//home/travis/build/pycroscopy/pyUSID/docs/auto_examples/auto_examples_jupyter.zip>`
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

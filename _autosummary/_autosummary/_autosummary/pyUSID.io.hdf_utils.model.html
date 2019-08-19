@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyUSID.io.hdf_utils.model &mdash; pyUSID 0.0.6.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="pyUSID.io.dtype_utils" href="../pyUSID.io.dtype_utils.html" />
+    <link rel="prev" title="pyUSID.io.hdf_utils.simple" href="pyUSID.io.hdf_utils.simple.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pyUSID
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.6.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">pyUSID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../external_guides.html">Tutorials on Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../auto_examples/index.html">Examples &amp; Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_format.html">Data Schema and File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribution_guidelines.html">Guidelines for Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../whats_new.html">What’s New</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../matlab_to_python.html">Upgrading from Matlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scale_to_hpc.html">Scaling to High-Performance-Computing Clusters</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#submodules">Submodules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../pyUSID.io.html">pyUSID.io</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../pyUSID.io.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../pyUSID.io.hdf_utils.html">pyUSID.io.hdf_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.dtype_utils.html">pyUSID.io.dtype_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.image.html">pyUSID.io.image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.io_utils.html">pyUSID.io.io_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.numpy_translator.html">pyUSID.io.numpy_translator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.usi_data.html">pyUSID.io.usi_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.translator.html">pyUSID.io.translator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyUSID.io.write_utils.html">pyUSID.io.write_utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyUSID.processing.html">pyUSID.processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pyUSID.viz.html">pyUSID.viz</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pyUSID</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../api.html">API Reference</a> &raquo;</li>
+        
+          <li><a href="../../pyUSID.io.html">pyUSID.io</a> &raquo;</li>
+        
+          <li><a href="../pyUSID.io.hdf_utils.html">pyUSID.io.hdf_utils</a> &raquo;</li>
+        
+      <li>pyUSID.io.hdf_utils.model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/_autosummary/_autosummary/_autosummary/pyUSID.io.hdf_utils.model.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyUSID.io.hdf_utils.model">
+<span id="pyusid-io-hdf-utils-model"></span><h1>pyUSID.io.hdf_utils.model<a class="headerlink" href="#module-pyUSID.io.hdf_utils.model" title="Permalink to this headline">¶</a></h1>
+<p>Utilities for reading and writing USID datasets that are highly model-dependent (with or without N-dimensional form)</p>
+<p>Created on Tue Nov  3 21:14:25 2015</p>
+<p>&#64;author: Suhas Somnath, Chris Smith</p>
+<p class="rubric">Functions</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.model.get_dimensionality" title="pyUSID.io.hdf_utils.model.get_dimensionality"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_dimensionality</span></code></a>(ds_index[, index_sort])</p></td>
+<td><p>Get the size of each index dimension in a specified sort order</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.model.get_sort_order" title="pyUSID.io.hdf_utils.model.get_sort_order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_sort_order</span></code></a>(ds_spec)</p></td>
+<td><p>Find how quickly the spectroscopic values are changing in each row and the order of rows from fastest changing to slowest.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.model.get_unit_values" title="pyUSID.io.hdf_utils.model.get_unit_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_unit_values</span></code></a>(ds_inds, ds_vals[, …])</p></td>
+<td><p>Gets the unit arrays of values that describe the spectroscopic dimensions</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.model.map_grid_to_cartesian" title="pyUSID.io.hdf_utils.model.map_grid_to_cartesian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_grid_to_cartesian</span></code></a>(h5_main, grid_shape[, …])</p></td>
+<td><p>Map an incomplete measurement, such as a spiral scan, to a cartesian grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.model.reshape_from_n_dims" title="pyUSID.io.hdf_utils.model.reshape_from_n_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape_from_n_dims</span></code></a>(data_n_dim[, h5_pos, …])</p></td>
+<td><p>Reshape the input 2D matrix to be N-dimensions based on the position and spectroscopic datasets.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.model.reshape_to_n_dims" title="pyUSID.io.hdf_utils.model.reshape_to_n_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape_to_n_dims</span></code></a>(h5_main[, h5_pos, …])</p></td>
+<td><p>Reshape the input 2D matrix to be N-dimensions based on the position and spectroscopic datasets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyUSID.io.hdf_utils.model.write_main_dataset" title="pyUSID.io.hdf_utils.model.write_main_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_main_dataset</span></code></a>(h5_parent_group, …[, …])</p></td>
+<td><p>Writes the provided data as a ‘Main’ dataset with all appropriate linking.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.model.get_dimensionality">
+<code class="sig-name descname">get_dimensionality</code><span class="sig-paren">(</span><em class="sig-param">ds_index</em>, <em class="sig-param">index_sort=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/model.html#get_dimensionality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.model.get_dimensionality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the size of each index dimension in a specified sort order</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds_index</strong> (<em>2D HDF5 Dataset</em><em> or </em><em>numpy array</em>) – Row matrix of indices</p></li>
+<li><p><strong>index_sort</strong> (<em>Iterable of unsigned integers</em><em> (</em><em>Optional</em><em>)</em>) – Sort that can be applied to dimensionality.
+For example - Order of rows sorted from fastest to slowest</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sorted_dims</strong> – Dimensionality of each row in ds_index.  If index_sort is supplied, it will be in the sorted order</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of unsigned integers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.model.get_sort_order">
+<code class="sig-name descname">get_sort_order</code><span class="sig-paren">(</span><em class="sig-param">ds_spec</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/model.html#get_sort_order"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.model.get_sort_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find how quickly the spectroscopic values are changing in each row
+and the order of rows from fastest changing to slowest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ds_spec</strong> (<em>2D HDF5 dataset</em><em> or </em><em>numpy array</em>) – Rows of indices to be sorted from fastest changing to slowest</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>change_sort</strong> – Order of rows sorted from fastest changing to slowest</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List of unsigned integers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.model.get_unit_values">
+<code class="sig-name descname">get_unit_values</code><span class="sig-paren">(</span><em class="sig-param">ds_inds</em>, <em class="sig-param">ds_vals</em>, <em class="sig-param">dim_names=None</em>, <em class="sig-param">all_dim_names=None</em>, <em class="sig-param">is_spec=None</em>, <em class="sig-param">verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/model.html#get_unit_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.model.get_unit_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the unit arrays of values that describe the spectroscopic dimensions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds_inds</strong> (<em>h5py.Dataset</em><em> or </em><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><em>numpy.ndarray</em></a>) – Spectroscopic or Position Indices dataset</p></li>
+<li><p><strong>ds_vals</strong> (<em>h5py.Dataset</em><em> or </em><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><em>numpy.ndarray</em></a>) – Spectroscopic or Position Values dataset</p></li>
+<li><p><strong>dim_names</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, or </em><em>list of str</em><em>, </em><em>Optional</em>) – Names of the dimensions of interest. Default = all</p></li>
+<li><p><strong>all_dim_names</strong> (<em>list of str</em><em>, </em><em>Optional</em>) – Names of all the dimensions in these datasets. Use this if supplying numpy arrays instead of h5py.Dataset
+objects for h5_inds, h5_vals since there is no other way of getting the dimension names.</p></li>
+<li><p><strong>is_spec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether or not the provided ancillary datasets are position or spectroscopic
+The user is recommended to supply this parameter whenever it is known
+By default, this function will attempt to recognize the answer based on the shape of the datasets.</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether or not to print debugging statements. Default - off</p></li>
+<li><p><strong>- this function can be extended / modified for ancillary position dimensions as well</strong> (<em>Note</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>unit_values</strong> – Dictionary containing the unit array for each dimension. The name of the dimensions are the keys.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.model.map_grid_to_cartesian">
+<code class="sig-name descname">map_grid_to_cartesian</code><span class="sig-paren">(</span><em class="sig-param">h5_main</em>, <em class="sig-param">grid_shape</em>, <em class="sig-param">mode='histogram'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/model.html#map_grid_to_cartesian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.model.map_grid_to_cartesian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map an incomplete measurement, such as a spiral scan, to a cartesian grid.
+:param h5_main: Dataset containing the sparse measurement
+:type h5_main: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyUSID.USIDataset</span></code>
+:param grid_shape: Shape of the output <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>.
+:type grid_shape: int or [int, int]
+:param mode: Method used for building a cartesian grid.</p>
+<blockquote>
+<div><p>Available methods = ‘histogram’, ‘linear’, ‘nearest’, ‘cubic’
+Use kwargs to pass onto each of the techniques</p>
+</div></blockquote>
+<dl class="field-list simple">
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>UNDER DEVELOPMENT!
+Currently only valid for 2 position dimensions</p>
+<p>&#64;author: Patrik Marschalik</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> but could be a h5py.Dataset or dask.array.core.Array object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.model.reshape_from_n_dims">
+<code class="sig-name descname">reshape_from_n_dims</code><span class="sig-paren">(</span><em class="sig-param">data_n_dim</em>, <em class="sig-param">h5_pos=None</em>, <em class="sig-param">h5_spec=None</em>, <em class="sig-param">verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/model.html#reshape_from_n_dims"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.model.reshape_from_n_dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reshape the input 2D matrix to be N-dimensions based on the
+position and spectroscopic datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_n_dim</strong> (<em>numpy.array</em><em> or </em><em>dask.array.core.Array</em>) – N dimensional array arranged as [positions dimensions…, spectroscopic dimensions]
+If h5_pos and h5_spec are not provided, this function will have to assume that the dimensions
+are arranged as [positions slowest to fastest, spectroscopic slowest to fastest].
+This restriction is removed if h5_pos and h5_spec are provided</p></li>
+<li><p><strong>h5_pos</strong> (<em>HDF5 Dataset</em><em>, </em><em>numpy.array</em><em> or </em><em>dask.array.core.Array</em>) – Position indices corresponding to rows in the final 2d array
+The dimensions should be arranged in terms of rate of change corresponding to data_n_dim.
+In other words if data_n_dim had two position dimensions arranged as [pos_fast, pos_slow, spec_dim_1….],
+h5_pos should be arranged as [pos_fast, pos_slow]</p></li>
+<li><p><strong>h5_spec</strong> (<em>HDF5 Dataset</em><em>, </em><em>numpy. array</em><em> or </em><em>dask.array.core.Array</em>) – Spectroscopic indices corresponding to columns in the final 2d array
+The dimensions should be arranged in terms of rate of change corresponding to data_n_dim.
+In other words if data_n_dim had two spectral dimensions arranged as [pos_dim_1,…, spec_fast, spec_slow],
+h5_spec should be arranged as [pos_slow, pos_fast]</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional. Default = False</em>) – Whether or not to print log statements</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>ds_2d</strong> (<em>numpy.array</em>) – 2 dimensional numpy array arranged as [positions, spectroscopic]</p></li>
+<li><p><strong>success</strong> (<em>boolean or string</em>) – True if full reshape was successful</p>
+<p>”Positions” if it was only possible to reshape by
+the position dimensions</p>
+<p>False if no reshape was possible</p>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If either <cite>h5_pos</cite> or <cite>h5_spec</cite> are not provided, the function will
+assume the first dimension is position and the remaining are spectroscopic already
+in order from fastest to slowest.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.model.reshape_to_n_dims">
+<code class="sig-name descname">reshape_to_n_dims</code><span class="sig-paren">(</span><em class="sig-param">h5_main</em>, <em class="sig-param">h5_pos=None</em>, <em class="sig-param">h5_spec=None</em>, <em class="sig-param">get_labels=False</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">sort_dims=False</em>, <em class="sig-param">lazy=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/model.html#reshape_to_n_dims"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.model.reshape_to_n_dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reshape the input 2D matrix to be N-dimensions based on the
+position and spectroscopic datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_main</strong> (<em>HDF5 Dataset</em>) – 2D data to be reshaped</p></li>
+<li><p><strong>h5_pos</strong> (<em>HDF5 Dataset</em><em>, </em><em>optional</em>) – Position indices corresponding to rows in <cite>h5_main</cite></p></li>
+<li><p><strong>h5_spec</strong> (<em>HDF5 Dataset</em><em>, </em><em>optional</em>) – Spectroscopic indices corresponding to columns in <cite>h5_main</cite></p></li>
+<li><p><strong>get_labels</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether or not to return the dimension labels.  Default False</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether or not to print debugging statements</p></li>
+<li><p><strong>sort_dims</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – If True, the data is sorted so that the dimensions are in order from fastest to slowest
+If False, the data is kept in the original order
+If <cite>get_labels</cite> is also True, the labels are sorted as well.</p></li>
+<li><p><strong>lazy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional. Default = False</em>) – If False, ds_Nd will be a numpy.ndarray object - this is suitable if the HDF5 dataset fits into memory
+If True, ds_Nd will be a dask.array object - This is suitable if the HDF5 dataset is too large to fit into
+memory. Note that this will bea lazy computation meaning that the returned object just contains the instructions
+. In order to get the actual value or content in numpy arrays, call ds_Nd.compute()</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>ds_Nd</strong> (<em>N-D numpy array or dask.array object</em>) – N dimensional array arranged as [positions slowest to fastest, spectroscopic slowest to fastest]</p></li>
+<li><p><strong>success</strong> (<em>boolean or string</em>) – True if full reshape was successful</p>
+<p>”Positions” if it was only possible to reshape by
+the position dimensions</p>
+<p>False if no reshape was possible</p>
+</li>
+<li><p><strong>ds_labels</strong> (<em>list of str</em>) – List of the labels of each dimension of <cite>ds_Nd</cite></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If either <cite>h5_pos</cite> or <cite>h5_spec</cite> are not provided, the function will first
+attempt to find them as attributes of <cite>h5_main</cite>.  If that fails, it will
+generate dummy values for them.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyUSID.io.hdf_utils.model.write_main_dataset">
+<code class="sig-name descname">write_main_dataset</code><span class="sig-paren">(</span><em class="sig-param">h5_parent_group</em>, <em class="sig-param">main_data</em>, <em class="sig-param">main_data_name</em>, <em class="sig-param">quantity</em>, <em class="sig-param">units</em>, <em class="sig-param">pos_dims</em>, <em class="sig-param">spec_dims</em>, <em class="sig-param">main_dset_attrs=None</em>, <em class="sig-param">h5_pos_inds=None</em>, <em class="sig-param">h5_pos_vals=None</em>, <em class="sig-param">h5_spec_inds=None</em>, <em class="sig-param">h5_spec_vals=None</em>, <em class="sig-param">aux_spec_prefix='Spectroscopic_'</em>, <em class="sig-param">aux_pos_prefix='Position_'</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyUSID/io/hdf_utils/model.html#write_main_dataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyUSID.io.hdf_utils.model.write_main_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the provided data as a ‘Main’ dataset with all appropriate linking.
+By default, the instructions for generating the ancillary datasets should be specified using the pos_dims and
+spec_dims arguments as dictionary objects. Alternatively, if both the indices and values datasets are already
+available for either/or the positions / spectroscopic, they can be specified using the keyword arguments. In this
+case, fresh datasets will not be generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h5_parent_group</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">h5py.Group</span></code>) – Parent group under which the datasets will be created</p></li>
+<li><p><strong>main_data</strong> (<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><em>numpy.ndarray</em></a><em>, </em><em>dask.array.core.Array</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a>) – 2D matrix formatted as [position, spectral] or a list / tuple with the shape for an empty dataset.
+If creating an empty dataset - the dtype must be specified via a kwarg.</p></li>
+<li><p><strong>main_data_name</strong> (<em>String / Unicode</em>) – Name to give to the main dataset. This cannot contain the ‘-‘ character.</p></li>
+<li><p><strong>quantity</strong> (<em>String / Unicode</em>) – Name of the physical quantity stored in the dataset. Example - ‘Current’</p></li>
+<li><p><strong>units</strong> (<em>String / Unicode</em>) – Name of units for the quantity stored in the dataset. Example - ‘A’ for amperes</p></li>
+<li><p><strong>pos_dims</strong> (<a class="reference internal" href="../pyUSID.io.write_utils.html#pyUSID.io.write_utils.Dimension" title="pyUSID.io.write_utils.Dimension"><em>Dimension</em></a><em> or </em><em>array-like of Dimension objects</em>) – Sequence of Dimension objects that provides all necessary instructions for constructing the indices and values
+datasets
+Object specifying the instructions necessary for building the Position indices and values datasets</p></li>
+<li><p><strong>spec_dims</strong> (<a class="reference internal" href="../pyUSID.io.write_utils.html#pyUSID.io.write_utils.Dimension" title="pyUSID.io.write_utils.Dimension"><em>Dimension</em></a><em> or </em><em>array-like of Dimension objects</em>) – Sequence of Dimension objects that provides all necessary instructions for constructing the indices and values
+datasets
+Object specifying the instructions necessary for building the Spectroscopic indices and values datasets</p></li>
+<li><p><strong>main_dset_attrs</strong> (<em>dictionary</em><em>, </em><em>Optional</em>) – Dictionary of parameters that will be written to the main dataset. Do NOT include region references here.</p></li>
+<li><p><strong>h5_pos_inds</strong> (<em>h5py.Dataset</em><em>, </em><em>Optional</em>) – Dataset that will be linked with the name “Position_Indices”</p></li>
+<li><p><strong>h5_pos_vals</strong> (<em>h5py.Dataset</em><em>, </em><em>Optional</em>) – Dataset that will be linked with the name “Position_Values”</p></li>
+<li><p><strong>h5_spec_inds</strong> (<em>h5py.Dataset</em><em>, </em><em>Optional</em>) – Dataset that will be linked with the name “Spectroscopic_Indices”</p></li>
+<li><p><strong>h5_spec_vals</strong> (<em>h5py.Dataset</em><em>, </em><em>Optional</em>) – Dataset that will be linked with the name “Spectroscopic_Values”</p></li>
+<li><p><strong>aux_spec_prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><em>unicode</em><em>, </em><em>Optional</em>) – Default prefix for Spectroscopic datasets. Default = “Spectroscopic”</p></li>
+<li><p><strong>aux_pos_prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><em>unicode</em><em>, </em><em>Optional</em>) – Default prefix for Position datasets. Default = “Position”</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>Optional</em><em>, </em><em>default=False</em>) – If set to true - prints debugging logs</p></li>
+<li><p><strong>will be passed onto the creation of the dataset. Please pass chunking</strong><strong>, </strong><strong>compression</strong><strong>, </strong><strong>dtype</strong><strong>, </strong><strong>and other</strong> (<em>kwargs</em>) – arguments this way</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>h5_main</strong> – Reference to the main dataset</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../pyUSID.io.usi_data.html#pyUSID.io.usi_data.USIDataset" title="pyUSID.io.usi_data.USIDataset">USIDataset</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pyUSID.io.dtype_utils.html" class="btn btn-neutral float-right" title="pyUSID.io.dtype_utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyUSID.io.hdf_utils.simple.html" class="btn btn-neutral float-left" title="pyUSID.io.hdf_utils.simple" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Suhas Somnath, Chris R. Smith, Stephen Jesse
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
